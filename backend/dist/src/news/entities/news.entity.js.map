@@ -1,0 +1,1 @@
+{"version":3,"file":"news.entity.js","sourceRoot":"","sources":["../../../../src/news/entities/news.entity.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,qCAAiE;AAG1D,IAAM,UAAU,GAAhB,MAAM,UAAU;CAMtB,CAAA;AANY,gCAAU;AAEnB;IADC,IAAA,gCAAsB,GAAE;;sCACd;AAGX;IADC,IAAA,gBAAM,EAAC,MAAM,CAAC;;yCACD;qBALL,UAAU;IADtB,IAAA,gBAAM,EAAC,MAAM,CAAC;GACF,UAAU,CAMtB"}
