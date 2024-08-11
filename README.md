@@ -35,7 +35,7 @@ This is a simple web application for managing a portfolio of works for a digital
 ## Installation
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (version X.X.X or later)
+- [Node.js](https://nodejs.org/)
 - npm (comes with Node.js)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Cloudinary](https://cloudinary.com/) account (for image uploads)
@@ -48,6 +48,7 @@ This is a simple web application for managing a portfolio of works for a digital
 2. Install backend dependencies:
     npm install
 3. Set up .env variables:
+    ```bash
     DB_USERNAME=your_db_username
     DB_PASSWORD=your_db_password
     DB_HOST=your_db_host
@@ -62,6 +63,7 @@ This is a simple web application for managing a portfolio of works for a digital
 2. Install frontend dependencies:
     npm install
 3. Set up .env variables:
+    ```bash
     VITE_CLOUDINARY_NAME=your_cloudinary_name
     VITE_UPLOAD_PRESET=your_upload_preset
 4. Run the React dev server:
