@@ -1,0 +1,23 @@
+# Node modules (already handled by the Dockerfile)
+node_modules
+
+# Build output
+dist
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# IDE files
+.vscode
+.idea
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Git files
+.git
+.gitignore
