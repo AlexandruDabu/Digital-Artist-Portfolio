@@ -13,7 +13,6 @@ interface ImageUploaderProps {
 }
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({ imageUrl, onImageUpload }) => {
-    const cloud_name = "dzcbnpola";
     const [file, setFile] = useState<File | null>(null);
     const [uploadedImageUrl, setUploadedImageUrl] = useState<string | null>(imageUrl);
     const [uploading, setUploading] = useState<boolean>(false);
@@ -38,7 +37,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ imageUrl, onImageUpload }
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
-    const cld = new Cloudinary({ cloud: { cloudName: cloud_name } });
+    const cld = new Cloudinary({ cloud: { cloudName: import.meta.env.VITE_CLOUDINARY_NAME } });
 
     const extractPublicId = (url: string) => {
         const urlParts = url.split('/');
