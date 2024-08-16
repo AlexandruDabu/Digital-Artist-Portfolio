@@ -44,7 +44,8 @@ const WorksListAdmin: React.FC<WorkListAdminProps> = ({works, onDelete, onHide})
                                     {work.title}
                                 </Typography>
                                 <Typography variant="body1">
-                                    {work.description}
+                                {work.description.length > 150 ? 
+                                         `${work.description.substring(0,150)}...` : work.description}
                                 </Typography>
                                 <Typography variant="h6">
                                     {work.isvisible ? 'Displayed' : 'Hidden'}

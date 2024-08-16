@@ -56,7 +56,8 @@ const WorksList: React.FC<WorkListProps> = ({ works }) => {
                                         {work.title}
                                     </Typography>
                                     <Typography variant="body2">
-                                        {work.description}
+                                        {work.description.length > 150 ? 
+                                         `${work.description.substring(0,150)}...` : work.description}
                                     </Typography>
                                 </CardContent>
                             </Card>
