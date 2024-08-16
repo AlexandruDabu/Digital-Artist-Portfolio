@@ -54,7 +54,7 @@ export const hideWork = async(work: Work):Promise<Work> => {
     try{
         const updatedWork = {
             ...work,
-            isVisible: !work.isVisible
+            isvisible: !work.isvisible
         }
 
         const response = await axiosClient.put(`/works/${work.id}`, updatedWork)

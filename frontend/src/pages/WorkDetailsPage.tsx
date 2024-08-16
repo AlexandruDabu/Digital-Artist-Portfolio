@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Work } from "../types";
-import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, Container, TextField, Typography } from "@mui/material";
 import { getWorkById, updateWork } from "../services/portofolioService";
 import ImageUploader from "../components/ImageUploader";
 
@@ -12,19 +12,18 @@ const WorkDetailsPage: React.FC = () => {
     const [work, setWork] = useState<Work | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    console.log(loading,error);
     const navigate = useNavigate();
-
     useEffect(() => {
         const fetchWork = async () => {
             try {
                 if (id) {
                     const currentWork = await getWorkById(Number(id));
                     setWork(currentWork);
-                    setFormData({ ...currentWork, id: currentWork.id, imageUrl: currentWork.imageUrl });
+                    setFormData({ ...currentWork, id: currentWork.id, imageurl: currentWork.imageurl });
                 }
-            } catch (error) {
+            } catch (err) {
                 setError('Failed loading the work details');
+                console.error(error);
             } finally {
                 setLoading(false);
             }
@@ -51,7 +50,10 @@ const WorkDetailsPage: React.FC = () => {
     };
 
     return (
-        <Container >
+        <>
+        {loading ? (<CircularProgress/>) :
+        (
+            <Container >
             <Typography variant="h4" gutterBottom>
                 Edit Work Details of Work {work?.title}
             </Typography>
@@ -77,13 +79,13 @@ const WorkDetailsPage: React.FC = () => {
                 <TextField
                     placeholder="Client Link"
                     name="clientLink"
-                    value={formData?.clientLink || ''}
+                    value={formData?.clientlink || ''}
                     onChange={handleInputChange}
                     fullWidth
                     margin="normal"
                 />
                 <ImageUploader
-                    imageUrl={formData?.imageUrl || ''}
+                    imageUrl={formData?.imageurl || ''}
                     onImageUpload={(url) => setFormData(prevData => prevData ? { ...prevData, imageUrl: url } : null)}
                 />
                 <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
@@ -93,6 +95,8 @@ const WorkDetailsPage: React.FC = () => {
                 </Box>
             </form>
         </Container>
+        )}
+        </>
     );
 };
 

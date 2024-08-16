@@ -12,9 +12,9 @@ const WorkForm: React.FC<WorkFormProps> = ({ onSave, work}) => {
         id: work?.id || Date.now(),
         title: work?.title || '',
         description: work?.description || '',
-        imageUrl: work?.imageUrl || '',
-        clientLink: work?.clientLink || '',
-        isVisible: true,
+        imageurl: work?.imageurl || '',
+        clientlink: work?.clientlink || '',
+        isvisible: true,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,7 +52,7 @@ const WorkForm: React.FC<WorkFormProps> = ({ onSave, work}) => {
                 <TextField
                 name="imageUrl"
                 label="Image URL"
-                value={formState.imageUrl}
+                value={formState.imageurl}
                 onChange={handleChange}
                 fullWidth
                 />
@@ -61,7 +61,7 @@ const WorkForm: React.FC<WorkFormProps> = ({ onSave, work}) => {
                 <TextField
                 name="clientLink"
                 label="Client URL"
-                value={formState.clientLink}
+                value={formState.clientlink}
                 onChange={handleChange}
                 fullWidth
                 />

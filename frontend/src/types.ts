@@ -2,9 +2,9 @@ export interface Work {
     id?: number;
     title: string;
     description: string;
-    imageUrl?: string;
-    clientLink: string;
-    isVisible?: boolean;
+    imageurl?: string;
+    clientlink: string;
+    isvisible?: boolean;
 }
 
 export interface User {

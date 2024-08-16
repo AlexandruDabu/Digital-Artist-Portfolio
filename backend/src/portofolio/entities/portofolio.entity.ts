@@ -12,11 +12,11 @@ export class PortofolioEntity{
     description: string;
 
     @Column({nullable: true})
-    imageUrl: string;
+    imageurl: string;
 
     @Column({nullable: true})
-    clientLink: string;
+    clientlink: string;
 
     @Column({default: true})
-    isVisible: boolean;
+    isvisible: boolean;
 }

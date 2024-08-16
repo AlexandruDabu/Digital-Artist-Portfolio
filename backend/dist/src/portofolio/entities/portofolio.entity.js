@@ -29,15 +29,15 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
-], PortofolioEntity.prototype, "imageUrl", void 0);
+], PortofolioEntity.prototype, "imageurl", void 0);
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
-], PortofolioEntity.prototype, "clientLink", void 0);
+], PortofolioEntity.prototype, "clientlink", void 0);
 __decorate([
     (0, typeorm_1.Column)({ default: true }),
     __metadata("design:type", Boolean)
-], PortofolioEntity.prototype, "isVisible", void 0);
+], PortofolioEntity.prototype, "isvisible", void 0);
 exports.PortofolioEntity = PortofolioEntity = __decorate([
     (0, typeorm_1.Entity)('portofolio')
 ], PortofolioEntity);

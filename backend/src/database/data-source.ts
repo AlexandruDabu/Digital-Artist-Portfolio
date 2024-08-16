@@ -3,6 +3,7 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 import { PortofolioEntity } from 'src/portofolio/entities/portofolio.entity';
 import { NewsEntity } from 'src/news/entities/news.entity';
 
+// Function to create DataSourceOptions
 export const createDataSourceOptions = (configService: ConfigService): DataSourceOptions => {
   return {
     type: 'postgres',
@@ -15,7 +16,7 @@ export const createDataSourceOptions = (configService: ConfigService): DataSourc
     synchronize: false,
     migrations: ['dist/database/migrations/*.js'],
     ssl: {
-        rejectUnauthorized: false,
-    },   
+      rejectUnauthorized: false,
+    },
   };
 };

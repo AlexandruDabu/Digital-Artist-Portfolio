@@ -10,9 +10,9 @@ const CreateWorkPage: React.FC = () => {
     const [formData, setFormData] = useState<Work>({
     title: '',
     description: '',
-    clientLink: '',
-    imageUrl: '',
-    isVisible: true,
+    clientlink: '',
+    imageurl: '',
+    isvisible: true,
     });
 
     const navigate = useNavigate();
@@ -29,7 +29,7 @@ const CreateWorkPage: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            formData.imageUrl = formData.imageUrl ? formData.imageUrl : 'https://plus.unsplash.com/premium_photo-1687991219976-b6edd2eb3375?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            formData.imageurl = formData.imageurl ? formData.imageurl : 'https://plus.unsplash.com/premium_photo-1687991219976-b6edd2eb3375?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             await createWork(formData);
             alert('Work created successfully');
             navigate('/control');
@@ -65,13 +65,13 @@ const CreateWorkPage: React.FC = () => {
                 <TextField
                     placeholder="Client Url"
                     name="clientLink"
-                    value={formData?.clientLink}
+                    value={formData?.clientlink}
                     onChange={handleInputChange}
                     fullWidth
                     margin="normal"
                 />
                 <ImageUploader
-                    imageUrl={formData?.imageUrl || ''}
+                    imageUrl={formData?.imageurl || ''}
                     onImageUpload={(url) => setFormData(prevData => ({ ...prevData, imageUrl: url }))}
                 />
                 <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>

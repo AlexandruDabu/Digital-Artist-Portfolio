@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { deleteWork, getWorks, hideWork } from "../services/portofolioService"
 import { Work } from "../types";
 import WorksListAdmin from "../components/WorksListAdmin";
-import { Box, Button, Container } from "@mui/material";
+import { Box, Button, CircularProgress, Container } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export default function AdminControlPage() {
@@ -10,7 +10,6 @@ export default function AdminControlPage() {
     const [loading,setLoading] = useState<boolean>(true);
 
     const naivgate = useNavigate();
-    console.log(loading);
     useEffect(() =>{
         const fetchWork = async() => {
         try{
@@ -49,7 +48,13 @@ export default function AdminControlPage() {
                     Create New Work
                 </Button>
             </Box>
-            <WorksListAdmin works={works} onHide={onHide} onDelete={onDelete} />
+            {loading ? (
+                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                    <CircularProgress />
+                </Box>
+            ): (
+                <WorksListAdmin works={works} onHide={onHide} onDelete={onDelete} />
+            )}
         </Container>
     )
 

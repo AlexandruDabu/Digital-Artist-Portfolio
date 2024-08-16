@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { alpha, Grid } from '@mui/material';
+import { alpha, CircularProgress, Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
@@ -18,7 +18,6 @@ const Hero:React.FC = () => {
     const [errorWork,setErrorWork] = React.useState<string|null>(null);
     const [user, setUser] = React.useState<User>({email: ''});
     const [loading, setLoading] = React.useState<boolean>(false);
-    console.log(loadingWork,errorWork,loading)
     const handleSubmit = async() => {
         setLoading(true);
         try{
@@ -48,6 +47,7 @@ const Hero:React.FC = () => {
             setWorks(response);
         }catch(error){
             setErrorWork("Failed loading works");
+            console.log(errorWork);
         }finally{
             setLoadingWork(false);
         }
@@ -112,8 +112,8 @@ const Hero:React.FC = () => {
               }}
               required
             />
-            <Button onClick={() => handleSubmit()} variant="contained" color="primary">
-              Start now
+            <Button disabled={loading} onClick={() => handleSubmit()} variant="contained" color="primary">
+              {loading ? (<CircularProgress size={20}/>) : ('Subscribe')}
             </Button>
           </Stack>
           <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
@@ -124,6 +124,15 @@ const Hero:React.FC = () => {
             .
           </Typography>
         </Stack>
+        {loadingWork ? (
+          <Typography
+          variant='h4'
+          mt={8}
+          align="center"
+          gutterBottom>
+            Loading...
+          </Typography>
+        ) : (
         <Typography
         variant="h4"
         mt={8}
@@ -131,6 +140,8 @@ const Hero:React.FC = () => {
         gutterBottom>
             My Work
         </Typography>
+        )}
+        
         <Box
             id="image"
             sx={(theme) => ({

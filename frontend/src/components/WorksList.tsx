@@ -27,11 +27,11 @@ const WorksList: React.FC<WorkListProps> = ({ works }) => {
                     </Box>
                 </Grid>
             ) : (
-                works.map((work) => work.isVisible && (
+                works.map((work) => work.isvisible && (
                     <Grid item xs={12} sm={6} md={4} key={work.id}>
                         <ButtonBase
                             component="a"
-                            href={work.clientLink}
+                            href={work.clientlink}
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{ width: '100%' }}>
@@ -48,7 +48,7 @@ const WorksList: React.FC<WorkListProps> = ({ works }) => {
                                     component="img"
                                     height="140"
                                     width="360"
-                                    image={work.imageUrl}
+                                    image={work.imageurl}
                                     alt={work.title}
                                 />
                                 <CardContent>

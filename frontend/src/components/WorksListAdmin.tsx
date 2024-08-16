@@ -36,7 +36,7 @@ const WorksListAdmin: React.FC<WorkListAdminProps> = ({works, onDelete, onHide})
                                 component="img"
                                 height="140"
                                 width="360"
-                                image={work.imageUrl}
+                                image={work.imageurl}
                                 alt={work.title}
                             />
                             <CardContent>
@@ -47,13 +47,13 @@ const WorksListAdmin: React.FC<WorkListAdminProps> = ({works, onDelete, onHide})
                                     {work.description}
                                 </Typography>
                                 <Typography variant="h6">
-                                    {work.isVisible ? 'Displayed' : 'Hidden'}
+                                    {work.isvisible ? 'Displayed' : 'Hidden'}
                                 </Typography>
                             </CardContent>
                             <CardActions>
                                 <Button variant="outlined" onClick={() => work.id !== undefined && onEdit(work.id)}>Edit</Button>
                                 <Button variant="outlined" onClick={() => work.id !== undefined && onDelete(work.id)}>Delete</Button>
-                                <Button variant="outlined" onClick={() => onHide(work)}>{work.isVisible ? 'Hide' : 'Display'}</Button>
+                                <Button variant="outlined" onClick={() => onHide(work)}>{work.isvisible ? 'Hide' : 'Display'}</Button>
                             </CardActions>
                         </Card>
                     </ButtonBase>

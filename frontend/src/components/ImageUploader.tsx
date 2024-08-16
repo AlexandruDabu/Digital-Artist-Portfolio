@@ -17,7 +17,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ imageUrl, onImageUpload }
     const [file, setFile] = useState<File | null>(null);
     const [uploadedImageUrl, setUploadedImageUrl] = useState<string | null>(imageUrl);
     const [uploading, setUploading] = useState<boolean>(false);
-    console.log(file);
     const onDrop = async (acceptedFiles: File[]) => {
         if (acceptedFiles.length > 0) {
             const selectedFile = acceptedFiles[0];
@@ -30,6 +29,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ imageUrl, onImageUpload }
                 onImageUpload(imageUrl);
             } catch (error) {
                 console.error('Error uploading file:', error);
+                console.log(file);
             } finally {
                 setUploading(false);
             }

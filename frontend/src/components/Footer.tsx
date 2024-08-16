@@ -13,6 +13,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { createNewsUser } from '../services/portofolioService';
 import { User } from '../types';
+import { CircularProgress } from '@mui/material';
 
 
 function Copyright() {
@@ -29,7 +30,6 @@ export default function Footer() {
     
     const [user, setUser] = React.useState<User>({email: ''});
     const [loading, setLoading] = React.useState<boolean>(false);
-    console.log(loading);
     const handleSubmit = async() => {
         setLoading(true);
         try{
@@ -101,8 +101,8 @@ export default function Footer() {
                 type="Email"
                 required
               />
-              <Button onClick={handleSubmit} variant="contained" color="primary" sx={{ flexShrink: 0 }}>
-                Subscribe
+              <Button disabled={loading}onClick={handleSubmit} variant="contained" color="primary" sx={{ flexShrink: 0 }}>
+                {loading ? (<CircularProgress size={20}/>) : ('Subscribe')}
               </Button>
             </Stack>
           </Box>
