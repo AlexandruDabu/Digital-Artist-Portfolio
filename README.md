@@ -11,8 +11,6 @@
 5. [Usage](#usage)
 6. [Project Structure](#project-structure)
 7. [Testing](#testing)
-8. [Contributing](#contributing)
-9. [Contact](#contact)
 
 ## Introduction
 This is a simple web application for managing a portfolio of works for a digital artist. The application allows the artist to add, update, and delete works from the portfolio. Artists can also upload images and add links to their works.
