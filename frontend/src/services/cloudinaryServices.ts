@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUD_NAME}/image/upload`;
+const apiUrl = `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_NAME}/image/upload`;
 
 export const uploadImageToCloudinary = async (file: File): Promise<string> => {
     const formData = new FormData();
