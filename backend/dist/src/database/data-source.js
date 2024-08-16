@@ -14,6 +14,9 @@ const createDataSourceOptions = (configService) => {
         entities: [portofolio_entity_1.PortofolioEntity, news_entity_1.NewsEntity],
         synchronize: false,
         migrations: ['dist/database/migrations/*.js'],
+        ssl: {
+            rejectUnauthorized: false,
+        },
     };
 };
 exports.createDataSourceOptions = createDataSourceOptions;

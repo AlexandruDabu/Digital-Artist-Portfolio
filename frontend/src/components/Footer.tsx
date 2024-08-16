@@ -29,7 +29,7 @@ export default function Footer() {
     
     const [user, setUser] = React.useState<User>({email: ''});
     const [loading, setLoading] = React.useState<boolean>(false);
-    
+    console.log(loading);
     const handleSubmit = async() => {
         setLoading(true);
         try{

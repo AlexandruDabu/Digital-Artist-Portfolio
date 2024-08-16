@@ -10,7 +10,7 @@ export default function AdminControlPage() {
     const [loading,setLoading] = useState<boolean>(true);
 
     const naivgate = useNavigate();
-
+    console.log(loading);
     useEffect(() =>{
         const fetchWork = async() => {
         try{

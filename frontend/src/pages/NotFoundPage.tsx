@@ -4,7 +4,12 @@ import { useNavigate } from "react-router-dom"
 const NotFoundPage: React.FC = () => {
     const navigate = useNavigate();
     return (
-        <Container align='center'>
+        <Container sx={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+        }}>
             <Typography variant="h4" component="h1" gutterBottom>
                 404 - Page Not Found
             </Typography>

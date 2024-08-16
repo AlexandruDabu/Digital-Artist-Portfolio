@@ -43,7 +43,7 @@ const WorksListAdmin: React.FC<WorkListAdminProps> = ({works, onDelete, onHide})
                                 <Typography variant="h5" component="div">
                                     {work.title}
                                 </Typography>
-                                <Typography variant="body">
+                                <Typography variant="body1">
                                     {work.description}
                                 </Typography>
                                 <Typography variant="h6">
@@ -51,8 +51,8 @@ const WorksListAdmin: React.FC<WorkListAdminProps> = ({works, onDelete, onHide})
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button variant="outlined" onClick={() => onEdit(work.id)}>Edit</Button>
-                                <Button variant="outlined" onClick={() => onDelete(work.id)}>Delete</Button>
+                                <Button variant="outlined" onClick={() => work.id !== undefined && onEdit(work.id)}>Edit</Button>
+                                <Button variant="outlined" onClick={() => work.id !== undefined && onDelete(work.id)}>Delete</Button>
                                 <Button variant="outlined" onClick={() => onHide(work)}>{work.isVisible ? 'Hide' : 'Display'}</Button>
                             </CardActions>
                         </Card>

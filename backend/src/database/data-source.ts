@@ -14,5 +14,8 @@ export const createDataSourceOptions = (configService: ConfigService): DataSourc
     entities: [PortofolioEntity, NewsEntity],
     synchronize: false,
     migrations: ['dist/database/migrations/*.js'],
+    ssl: {
+        rejectUnauthorized: false,
+    },   
   };
 };

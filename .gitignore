@@ -1,62 +1,53 @@
-# Compiled output
-/dist
-/build
+# Node modules
+node_modules/
 
-# Node.js dependencies
-**/node_modules/
+# Build output
+dist/
+build/
 
 # Logs
-logs/
 *.log
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
-lerna-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
 
 # OS-specific files
 .DS_Store
-
-# Tests
-/coverage
-/.nyc_output
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
-
-# Temporary and runtime data
-.temp
-.tmp
-pids/
-*.pid
-*.seed
-*.pid.lock
-
-# Diagnostic reports (https://nodejs.org/api/report.html)
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+Thumbs.db
 
 # Editor-specific files
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+*.vscode/
+.idea/
+
+# NPM
+package-lock.json
+yarn.lock
+
+# Next.js
+.next/
+out/
+
+# Vite
+.vite/
+
+# SvelteKit
+.svelte-kit/
+
+# Netlify
+.netlify/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage
+coverage/

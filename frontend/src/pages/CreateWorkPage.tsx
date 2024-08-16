@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Work } from "../types";
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
-import { createWork, getWorkById, updateWork } from "../services/portofolioService";
+import { createWork } from "../services/portofolioService";
 import ImageUploader from "../components/ImageUploader";
 
 
@@ -20,7 +20,10 @@ const CreateWorkPage: React.FC = () => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setFormData(prevData => prevData ? { ...prevData, [name]: value } : null);
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: value,
+        }));
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -68,8 +71,8 @@ const CreateWorkPage: React.FC = () => {
                     margin="normal"
                 />
                 <ImageUploader
-                    imageUrl={formData?.imageUrl}
-                    onImageUpload={(url) => setFormData(prevData => prevData ? { ...prevData, imageUrl: url } : null)}
+                    imageUrl={formData?.imageUrl || ''}
+                    onImageUpload={(url) => setFormData(prevData => ({ ...prevData, imageUrl: url }))}
                 />
                 <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
                     <Button type="submit" variant="contained" color="primary">

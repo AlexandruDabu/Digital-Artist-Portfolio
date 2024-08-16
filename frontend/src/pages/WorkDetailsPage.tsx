@@ -12,7 +12,7 @@ const WorkDetailsPage: React.FC = () => {
     const [work, setWork] = useState<Work | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-
+    console.log(loading,error);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const WorkDetailsPage: React.FC = () => {
                 if (id) {
                     const currentWork = await getWorkById(Number(id));
                     setWork(currentWork);
-                    setFormData(prevData => ({ ...currentWork, id: currentWork.id, imageUrl: currentWork.imageUrl }));
+                    setFormData({ ...currentWork, id: currentWork.id, imageUrl: currentWork.imageUrl });
                 }
             } catch (error) {
                 setError('Failed loading the work details');
@@ -83,7 +83,7 @@ const WorkDetailsPage: React.FC = () => {
                     margin="normal"
                 />
                 <ImageUploader
-                    imageUrl={formData?.imageUrl}
+                    imageUrl={formData?.imageUrl || ''}
                     onImageUpload={(url) => setFormData(prevData => prevData ? { ...prevData, imageUrl: url } : null)}
                 />
                 <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
