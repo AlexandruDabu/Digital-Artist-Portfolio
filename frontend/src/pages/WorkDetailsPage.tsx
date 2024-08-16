@@ -78,7 +78,7 @@ const WorkDetailsPage: React.FC = () => {
                 />
                 <TextField
                     placeholder="Client Link"
-                    name="clientLink"
+                    name="clientlink"
                     value={formData?.clientlink || ''}
                     onChange={handleInputChange}
                     fullWidth
@@ -86,7 +86,7 @@ const WorkDetailsPage: React.FC = () => {
                 />
                 <ImageUploader
                     imageUrl={formData?.imageurl || ''}
-                    onImageUpload={(url) => setFormData(prevData => prevData ? { ...prevData, imageUrl: url } : null)}
+                    onImageUpload={(url) => setFormData(prevData => prevData ? { ...prevData, imageurl: url } : null)}
                 />
                 <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
                     <Button type="submit" variant="contained" color="primary">

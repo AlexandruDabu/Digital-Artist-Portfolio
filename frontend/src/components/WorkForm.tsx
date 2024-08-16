@@ -50,7 +50,7 @@ const WorkForm: React.FC<WorkFormProps> = ({ onSave, work}) => {
             </Grid>
             <Grid item xs={12}>
                 <TextField
-                name="imageUrl"
+                name="imageurl"
                 label="Image URL"
                 value={formState.imageurl}
                 onChange={handleChange}
@@ -59,7 +59,7 @@ const WorkForm: React.FC<WorkFormProps> = ({ onSave, work}) => {
             </Grid>
             <Grid item xs={12}>
                 <TextField
-                name="clientLink"
+                name="clientlink"
                 label="Client URL"
                 value={formState.clientlink}
                 onChange={handleChange}
